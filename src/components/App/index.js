@@ -1,3 +1,11 @@
+import { connect } from 'react-redux'
+
 import App from './App'
 
-export default App
+function mapStateToProps (state) {
+  return {
+    images: state.images.data
+  }
+}
+
+export default connect(mapStateToProps)(App)

@@ -14,6 +14,10 @@ class App extends Component {
     images: PropTypes.array.isRequired
   }
 
+  componentWillMount () {
+    this.props.getImages()
+  }
+
   render () {
     return (
       <div className='App'>

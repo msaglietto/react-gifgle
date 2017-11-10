@@ -10,7 +10,7 @@ const defaultProps = {
 }
 
 export const Component = props => {
-  const imagesComp = props.images.map((image) => <img key={image.id} src={image.images.fixed_height_small.url} alt={image.title} />)
+  const imagesComp = props.images.map((image) => <img key={image.id} src={image.preview} alt={image.title} />)
 
   return (
     <div className='ImageList'>

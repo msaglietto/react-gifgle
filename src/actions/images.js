@@ -13,11 +13,12 @@ const giphyToImage = (giphy) => ({
   original: giphy.images.original.url,
   slug: giphy.slug
 })
+const giphyAPIPerpage = 25
 
-export function getImages (query) {
+export function getImages (query, page = 0) {
   return (dispatch) => {
     dispatch({ type: IMAGES_REQUEST })
-    const url = query ? `${API_SEARCH_URL}${query}` : API_TREND_URL
+    const url = query ? `${API_SEARCH_URL}${query}&offset=${page * giphyAPIPerpage}` : API_TREND_URL
     window.fetch(`${url}${API_KEY}`)
       .then(res => {
         if (res.ok) {
@@ -27,7 +28,14 @@ export function getImages (query) {
       })
       .then(resData => {
         const images = (resData.data || []).map(giphyToImage)
-        dispatch({ type: IMAGES_REQUEST_RECEIVE, payload: images })
+        dispatch({
+          type: IMAGES_REQUEST_RECEIVE,
+          payload: {
+            images,
+            total: resData.pagination.total_count || resData.pagination.count,
+            page: resData.pagination.offset / giphyAPIPerpage
+          }
+        })
       })
       .catch(ex => dispatch({ type: IMAGES_REQUEST_FAIL, payload: ex.toString() }))
   }

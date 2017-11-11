@@ -6,7 +6,9 @@ import App from './App'
 it('renders without crashing', () => {
   const props = {
     getImages: () => {},
-    images: []
+    images: [],
+    page: 0,
+    total: 10
   }
   const wrapper = shallow(<App {...props} />)
 

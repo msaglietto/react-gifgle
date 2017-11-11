@@ -2,7 +2,7 @@
 
 ##TODO:
 - [] Routing
-- [] Pagination
 
 ##Gotchas
 - Fetch polyfill
+- Offset pagination is not working correctly

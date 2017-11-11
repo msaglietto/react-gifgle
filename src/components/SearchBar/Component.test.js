@@ -20,7 +20,7 @@ describe('SearchBar', () => {
     wrapper.find('input').simulate('change', {target: {value: 'test'}})
 
     expect(wrapper.state('query')).toEqual('test')
-  });
+  })
 
   it('should call prop on submit', () => {
     const props = {

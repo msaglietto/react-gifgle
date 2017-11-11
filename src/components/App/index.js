@@ -6,7 +6,9 @@ import { getImages } from '../../actions/images'
 import App from './App'
 
 const mapStateToProps = state => ({
-  images: state.images.data
+  images: state.images.data,
+  page: state.images.page,
+  total: state.images.total
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

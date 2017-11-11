@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should render equal to the snapshot 1`] = `
+<ul
+  className="Pagination"
+>
+  <li
+    key="<<"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      &lt;&lt;
+       
+    </button>
+  </li>
+  <li
+    key="<"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      &lt;
+       
+    </button>
+  </li>
+  <li
+    key="1"
+  >
+    1
+  </li>
+  <li
+    key="2"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      2
+       
+    </button>
+  </li>
+  <li
+    key="3"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      3
+       
+    </button>
+  </li>
+  <li
+    key="4"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      4
+       
+    </button>
+  </li>
+  <li
+    key="5"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      5
+       
+    </button>
+  </li>
+  <li
+    key=">"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      &gt;
+       
+    </button>
+  </li>
+  <li
+    key=">>"
+  >
+    <button
+      onClick={[Function]}
+    >
+       
+      &gt;&gt;
+       
+    </button>
+  </li>
+</ul>
+`;

@@ -32,5 +32,16 @@ exports[`renders without crashing 1`] = `
   <ImageList
     images={Array []}
   />
+  <div
+    className="App-pagination"
+  >
+    <Pagination
+      currentPage={0}
+      onPageClick={[Function]}
+      pagesToShow={10}
+      perPage={25}
+      totalItems={10}
+    />
+  </div>
 </div>
 `;

@@ -14,12 +14,19 @@ class App extends Component {
     images: PropTypes.array.isRequired
   }
 
+  state = {
+    query: '',
+    offset: 0,
+    page: 1
+  }
+
   componentWillMount () {
     this.props.getImages()
   }
 
   handleNewSearch = (query) => {
     this.props.getImages(query)
+    this.setState({ query })
   }
 
   render () {
@@ -32,6 +39,9 @@ class App extends Component {
             <SearchBar onNewSearch={this.handleNewSearch} />
           </div>
         </header>
+        <h2>
+          You are seeing the results of {this.state.query || 'trending gif'}
+        </h2>
         <ImageList images={this.props.images} />
       </div>
     )

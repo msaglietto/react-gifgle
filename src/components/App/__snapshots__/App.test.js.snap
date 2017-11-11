@@ -25,6 +25,10 @@ exports[`renders without crashing 1`] = `
       />
     </div>
   </header>
+  <h2>
+    You are seeing the results of 
+    trending gif
+  </h2>
   <ImageList
     images={Array []}
   />

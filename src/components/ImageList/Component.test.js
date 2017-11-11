@@ -15,14 +15,12 @@ describe('SearchBar', () => {
     const props = {
       images: [{
         id: 1,
-        images: {
-          fixed_height_small: {url: 'test-1'}
-        }
+        title: 'Test 1',
+        preview: 'test-1.gif'
       }, {
         id: 2,
-        images: {
-          fixed_height_small: {url: 'test-2'}
-        }
+        title: 'Test 2',
+        preview: 'test-2.gif'
       }]
     }
     const wrapper = shallow(<Component {...props} />)

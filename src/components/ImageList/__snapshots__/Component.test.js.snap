@@ -1,22 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBar should render a list of components 1`] = `
-<div
+<ul
   className="ImageList"
 >
-  <img
+  <li
     key="1"
-    src="test-1"
-  />
-  <img
+  >
+    <img
+      alt="Test 1"
+      src="test-1.gif"
+    />
+  </li>
+  <li
     key="2"
-    src="test-2"
-  />
-</div>
+  >
+    <img
+      alt="Test 2"
+      src="test-2.gif"
+    />
+  </li>
+</ul>
 `;
 
 exports[`SearchBar should render a message for empty results 1`] = `
-<div
+<ul
   className="ImageList"
 />
 `;

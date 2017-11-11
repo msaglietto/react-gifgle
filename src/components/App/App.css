@@ -21,7 +21,8 @@
 }
 
 .App-SearchBar {
-  margin-left: 20px;
+  margin: 0 40px;
+  flex-grow: 1;
 }
 
 @keyframes App-logo-spin {

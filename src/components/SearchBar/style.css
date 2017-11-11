@@ -1,0 +1,14 @@
+.SearchBar input {
+  font-weight: 400;
+  border-radius: 0;
+  height: 34px;
+  border: none;
+  font-size: 20px;
+  width: calc(100% - 60px);
+}
+
+.SearchBar button {
+  height: 36px;
+  border: none;
+  line-height: 38px;
+}

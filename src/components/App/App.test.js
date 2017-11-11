@@ -4,7 +4,11 @@ import { shallow } from 'enzyme'
 import App from './App'
 
 it('renders without crashing', () => {
-  const wrapper = shallow(<App />)
+  const props = {
+    getImages: () => {},
+    images: []
+  }
+  const wrapper = shallow(<App {...props} />)
 
   expect(wrapper).toMatchSnapshot()
 })

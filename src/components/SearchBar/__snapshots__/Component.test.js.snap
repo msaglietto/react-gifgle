@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBar should render equal to the snapshot 1`] = `
-<input
-  onChange={[Function]}
-  placeholder="Enter gif topic"
-/>
+<form
+  className="SearchBar"
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</form>
 `;

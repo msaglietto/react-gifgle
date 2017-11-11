@@ -1,24 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const handleInputChange = props => event => {
-  props.onInputChange(event.target.value)
+import './style.css'
+
+class SearchBar extends Component {
+  static displayName = 'SearchBar'
+
+  static propTypes = {
+    onNewSearch: PropTypes.func.isRequired
+  }
+
+  state = {
+    query: ''
+  }
+
+  handleInputChange = event => {
+    this.setState({query: event.target.value})
+  }
+
+  handleFormSubmit = event => {
+    event.preventDefault()
+    this.props.onNewSearch(this.state.query)
+  }
+
+  render () {
+    return (
+      <form onSubmit={this.handleFormSubmit} className='SearchBar'>
+        <input type='text' value={this.state.query} onChange={this.handleInputChange} />
+        <button type='submit'>Search</button>
+      </form>
+    )
+  }
 }
 
-const propTypes = {
-  onInputChange: PropTypes.func.isRequired
-}
-
-const defaultProps = {
-
-}
-
-export const Component = props => (
-  <input placeholder='Enter gif topic' onChange={handleInputChange(props)} />
-)
-
-Component.propTypes = propTypes
-Component.defaultProps = defaultProps
-Component.displayName = 'SearchBar'
-
-export default Component
+export default SearchBar

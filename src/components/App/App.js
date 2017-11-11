@@ -18,6 +18,10 @@ class App extends Component {
     this.props.getImages()
   }
 
+  handleNewSearch = (query) => {
+    this.props.getImages(query)
+  }
+
   render () {
     return (
       <div className='App'>
@@ -25,7 +29,7 @@ class App extends Component {
           <img src={logo} className='App-logo' alt='logo' />
           <h1 className='App-title'>Gifgle</h1>
           <div className='App-SearchBar'>
-            <SearchBar onInputChange={console.log} />
+            <SearchBar onNewSearch={this.handleNewSearch} />
           </div>
         </header>
         <ImageList images={this.props.images} />

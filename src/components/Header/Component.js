@@ -15,9 +15,9 @@ const handleNewSearch = (context) => (query) => context.router.history.push(`/se
 
 export const Component = (props, context) => (
   <header className='Header'>
-    <Link to='/'><img src={logo} className='App-logo' alt='GIFGLE Logo' /></Link>
-    <Link to='/'><h1 className='App-title'>GIFGLE</h1></Link>
-    <div className='App-SearchBar'>
+    <Link to='/'><img src={logo} className='Header-logo' alt='GIFGLE Logo' /></Link>
+    <Link to='/'><h1 className='Header-title'>GIFGLE</h1></Link>
+    <div className='Header-SearchBar'>
       <SearchBar onNewSearch={handleNewSearch(context)} />
     </div>
   </header>

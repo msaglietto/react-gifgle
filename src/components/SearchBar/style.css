@@ -4,11 +4,12 @@
   height: 34px;
   border: none;
   font-size: 20px;
-  width: calc(100% - 60px);
+  width: calc(100% - 70px);
+  padding: 0 5px;
 }
 
 .SearchBar button {
-  height: 36px;
+  height: 34px;
   border: none;
-  line-height: 38px;
+  line-height: 36px;
 }

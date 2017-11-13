@@ -21,7 +21,7 @@ class App extends Component {
 
           <Route exact path='/' component={SearchResults} />
           <Route path='/search/:query/:page?' component={SearchResults} />
-          <Route path='/:slug' component={ImageDetails} />
+          <Route path='/show/:slug' component={ImageDetails} />
         </div>
       </Router>
     )

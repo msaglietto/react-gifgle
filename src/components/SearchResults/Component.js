@@ -21,7 +21,7 @@ class Component extends React.Component {
 
   componentWillMount () {
     const { query, page } = this.props.match.params
-    this.props.getImages(query, parseInt(page, 10))
+    this.props.getImages(query, parseInt(page || 0, 10))
   }
 
   componentWillReceiveProps (nexProps) {
@@ -38,7 +38,7 @@ class Component extends React.Component {
   }
 
   handleImageClick = (image) => {
-    this.props.history.push(`/${image.slug}`)
+    this.props.history.push(`/show/${image.slug}`)
   }
 
   render () {

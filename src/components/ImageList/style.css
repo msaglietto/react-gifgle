@@ -1,15 +1,16 @@
 .ImageList {
   list-style: none;
   padding: 0;
-  column-width: 200px;
-  column-gap: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .ImageList li {
-  height: 100px;
+  height: 200px;
 }
 
 .ImageList li img{
   width: 100%;
-  height: 100px;
+  height: 200px;
 }

@@ -6,15 +6,15 @@ export const IMAGE_REQUEST = 'IMAGE_REQUEST'
 export const IMAGE_REQUEST_RECEIVE = 'IMAGE_REQUEST_RECEIVE'
 export const IMAGE_REQUEST_FAIL = 'IMAGE_REQUEST_FAIL'
 
-const API_SEARCH_URL = 'http://api.giphy.com/v1/gifs/search?q='
-const API_SINGLE_URL = 'http://api.giphy.com/v1/gifs/'
-const API_TREND_URL = 'http://api.giphy.com/v1/gifs/trending?1=1'
+const API_SEARCH_URL = 'https://api.giphy.com/v1/gifs/search?q='
+const API_SINGLE_URL = 'https://api.giphy.com/v1/gifs/'
+const API_TREND_URL = 'https://api.giphy.com/v1/gifs/trending?1=1'
 const API_KEY = '&api_key=k8bNZGTTkxtQT1JPF0AnM31IALA8pBFV'
 
 const giphyToImage = (giphy) => ({
   id: giphy.id,
   title: giphy.title,
-  preview: giphy.images.fixed_height_small.url,
+  preview: giphy.images.fixed_height.url,
   original: giphy.images.original.url,
   slug: giphy.slug
 })

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageDetails should render equal to the snapshot 1`] = `
+<div
+  className="ImageDetails"
+>
+  <h2>
+    TEst
+  </h2>
+  <img
+    alt="TEst"
+    src="someUrl"
+  />
+</div>
+`;
+
+exports[`ImageDetails should show when its loading 1`] = `"Loading ..."`;
+
+exports[`ImageDetails should show when there is an error 1`] = `"Sorry it has been an error while fetching the image"`;

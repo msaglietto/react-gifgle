@@ -1,47 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<div
-  className="App"
->
-  <header
-    className="App-header"
-  >
-    <img
-      alt="logo"
-      className="App-logo"
-      src="logo.svg"
-    />
-    <h1
-      className="App-title"
-    >
-      Gifgle
-    </h1>
-    <div
-      className="App-SearchBar"
-    >
-      <SearchBar
-        onNewSearch={[Function]}
-      />
-    </div>
-  </header>
-  <h2>
-    You are seeing the results of 
-    trending gif
-  </h2>
-  <ImageList
-    images={Array []}
-  />
+<BrowserRouter>
   <div
-    className="App-pagination"
+    className="App"
   >
-    <Pagination
-      currentPage={0}
-      onPageClick={[Function]}
-      pagesToShow={10}
-      perPage={25}
-      totalItems={10}
+    <Header />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/search/:query/:page?"
+    />
+    <Route
+      component={[Function]}
+      path="/:slug"
     />
   </div>
-</div>
+</BrowserRouter>
 `;

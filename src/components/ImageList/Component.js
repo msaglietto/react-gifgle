@@ -11,8 +11,14 @@ const defaultProps = {
   images: []
 }
 
+const handleImageClick = (props, image) => () => props.onImageClick(image)
+
 export const Component = props => {
-  const imagesComp = props.images.map((image) => <li key={image.id}><img src={image.preview} alt={image.title} /></li>)
+  const imagesComp = props.images.map((image) => (
+    <li key={image.id} onClick={handleImageClick(props, image)}>
+      <img src={image.preview} alt={image.title} />
+    </li>
+  ))
 
   return (
     <ul className='ImageList'>

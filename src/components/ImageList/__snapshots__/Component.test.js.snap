@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchBar should render a list of components 1`] = `
+exports[`ImageList should render a list of components 1`] = `
 <ul
   className="ImageList"
 >
   <li
     key="1"
+    onClick={[Function]}
   >
     <img
       alt="Test 1"
@@ -14,6 +15,7 @@ exports[`SearchBar should render a list of components 1`] = `
   </li>
   <li
     key="2"
+    onClick={[Function]}
   >
     <img
       alt="Test 2"
@@ -23,7 +25,7 @@ exports[`SearchBar should render a list of components 1`] = `
 </ul>
 `;
 
-exports[`SearchBar should render a message for empty results 1`] = `
+exports[`ImageList should render a message for empty results 1`] = `
 <ul
   className="ImageList"
 />

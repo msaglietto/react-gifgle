@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults should render equal to the snapshot 1`] = `
+<div
+  className="SearchReults"
+>
+  <h2>
+    You are seeing the results of 
+    trending
+     Gifts
+  </h2>
+  <ImageList
+    images={Array []}
+    onImageClick={[Function]}
+  />
+  <div
+    className="SearchResults-pagination"
+  >
+    <Pagination
+      currentPage={0}
+      onPageClick={[Function]}
+      pagesToShow={10}
+      perPage={25}
+      totalItems={10}
+    />
+  </div>
+</div>
+`;
+
+exports[`SearchResults should show when its loading 1`] = `"Loading ..."`;
+
+exports[`SearchResults should show when there is an error 1`] = `"Sorry it has been an error while fetching the image"`;

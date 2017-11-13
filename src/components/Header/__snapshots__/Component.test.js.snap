@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render a message for empty results 1`] = `
+<header
+  className="Header"
+>
+  <Link
+    replace={false}
+    to="/"
+  >
+    <img
+      alt="GIFGLE Logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+  </Link>
+  <Link
+    replace={false}
+    to="/"
+  >
+    <h1
+      className="App-title"
+    >
+      GIFGLE
+    </h1>
+  </Link>
+  <div
+    className="App-SearchBar"
+  >
+    <SearchBar
+      onNewSearch={[Function]}
+    />
+  </div>
+</header>
+`;

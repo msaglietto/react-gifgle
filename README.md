@@ -1,6 +1,2 @@
-#Gifgle - Gif search engine
-
-##TODO:
-
-##Gotchas
-- Fetch polyfill
+# Gifgle - Gif search engine
+[Running here](https://msaglietto.github.io/react-gifgle/)

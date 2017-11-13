@@ -40,4 +40,73 @@ describe('SearchResults', () => {
 
     expect(wrapper).toMatchSnapshot()
   })
+
+  it('should call getImages on mount', () => {
+    const props = {
+      ...defProps,
+      getImages: jest.fn(),
+      match: { params: {query: 'test', page: '4'} }
+    }
+    shallow(<Component {...props} />)
+
+    expect(props.getImages).toHaveBeenCalledWith('test', 4)
+  })
+
+  it('should call getImages on new props', () => {
+    const props = {
+      ...defProps,
+      getImages: jest.fn(),
+      match: { params: {query: 'test', page: '4'} }
+    }
+    const wrapper = shallow(<Component {...props} />)
+
+    const nextProps = {
+      ...defProps,
+      match: { params: {query: 'testo', page: '0'} }
+    }
+    wrapper.setProps(nextProps)
+
+    expect(props.getImages).toHaveBeenCalledWith('testo', 0)
+  })
+
+  it('should not call getImages on same props', () => {
+    const props = {
+      ...defProps,
+      getImages: jest.fn(),
+      match: { params: {query: 'test', page: '4'} }
+    }
+    const wrapper = shallow(<Component {...props} />)
+
+    const nextProps = {
+      ...defProps,
+      match: { params: {query: 'test', page: '4'} }
+    }
+    wrapper.setProps(nextProps)
+
+    expect(props.getImages).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call history on image click', () => {
+    const props = {
+      ...defProps,
+      match: { params: {query: 'test', page: '4'} },      
+      history: { push: jest.fn() }
+    }
+    const wrapper = shallow(<Component {...props} />)
+    wrapper.find('ImageList').prop('onImageClick')({slug: 'slug'})
+
+    expect(props.history.push).toHaveBeenCalledWith('/show/slug')
+  })
+
+  it('should call history on page change', () => {
+    const props = {
+      ...defProps,
+      match: { params: {query: 'test', page: '4'} },      
+      history: { push: jest.fn() }
+    }
+    const wrapper = shallow(<Component {...props} />)
+    wrapper.find('Pagination').prop('onPageClick')(2)
+
+    expect(props.history.push).toHaveBeenCalledWith('/search/test/2')
+  })
 })

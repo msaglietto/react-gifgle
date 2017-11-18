@@ -24,12 +24,12 @@ export function getImages (query, page = 0) {
   return (dispatch) => {
     dispatch({ type: IMAGES_REQUEST })
     const url = query ? `${API_SEARCH_URL}${query}&offset=${page * giphyAPIPerpage}` : API_TREND_URL
-    window.fetch(`${url}${API_KEY}`)
+    return window.fetch(`${url}${API_KEY}`)
       .then(res => {
         if (res.ok) {
           return res.json()
         }
-        throw new Error('Image data fail')
+        throw new Error('Error while fetching the images')
       })
       .then(resData => {
         const images = (resData.data || []).map(giphyToImage)
@@ -42,7 +42,7 @@ export function getImages (query, page = 0) {
           }
         })
       })
-      .catch(ex => dispatch({ type: IMAGES_REQUEST_FAIL, payload: ex.toString() }))
+      .catch(ex => dispatch({ type: IMAGES_REQUEST_FAIL, payload: ex.message }))
   }
 }
 
@@ -52,12 +52,12 @@ export function getImage (slug) {
   return (dispatch) => {
     dispatch({ type: IMAGE_REQUEST })
     const url = `${API_SINGLE_URL}${slugToId(slug)}?1=1`
-    window.fetch(`${url}${API_KEY}`)
+    return window.fetch(`${url}${API_KEY}`)
       .then(res => {
         if (res.ok) {
           return res.json()
         }
-        throw new Error('Image data fail')
+        throw new Error('Error while fetching the image')
       })
       .then(resData => {
         dispatch({
@@ -65,6 +65,6 @@ export function getImage (slug) {
           payload: giphyToImage(resData.data)
         })
       })
-      .catch(ex => dispatch({ type: IMAGE_REQUEST_FAIL, payload: ex.toString() }))
+      .catch(ex => dispatch({ type: IMAGE_REQUEST_FAIL, payload: ex.message }))
   }
 }

@@ -10,7 +10,7 @@ exports[`Header should render a message for empty results 1`] = `
   >
     <img
       alt="GIFGLE Logo"
-      className="App-logo"
+      className="Header-logo"
       src="logo.svg"
     />
   </Link>
@@ -19,13 +19,13 @@ exports[`Header should render a message for empty results 1`] = `
     to="/"
   >
     <h1
-      className="App-title"
+      className="Header-title"
     >
       GIFGLE
     </h1>
   </Link>
   <div
-    className="App-SearchBar"
+    className="Header-SearchBar"
   >
     <SearchBar
       onNewSearch={[Function]}

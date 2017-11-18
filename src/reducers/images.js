@@ -1,4 +1,4 @@
-import { 
+import {
   IMAGES_REQUEST,
   IMAGES_REQUEST_RECEIVE,
   IMAGES_REQUEST_FAIL,
@@ -7,7 +7,7 @@ import {
   IMAGE_REQUEST_FAIL
 } from '../actions/images'
 
-const initialState = {
+export const initialState = {
   data: [],
   page: 0,
   total: 0,
@@ -17,7 +17,7 @@ const initialState = {
   image: {}
 }
 
-export default function images (state = initialState, action) {
+export default function images (state = initialState, action = {}) {
   switch (action.type) {
     case IMAGES_REQUEST:
       return {
@@ -32,7 +32,7 @@ export default function images (state = initialState, action) {
         data: action.payload.images,
         total: action.payload.total,
         page: action.payload.page,
-        isLoading: false,
+        isLoading: false
       }
     case IMAGES_REQUEST_FAIL:
       return {
@@ -40,6 +40,7 @@ export default function images (state = initialState, action) {
         isLoading: false,
         error: action.payload
       }
+
     case IMAGE_REQUEST:
       return {
         ...state,
@@ -59,6 +60,7 @@ export default function images (state = initialState, action) {
         isLoading: false,
         error: action.payload
       }
+
     default:
       return state
   }

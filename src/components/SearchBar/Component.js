@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './style.css'
+import './styles.css'
 
 class SearchBar extends Component {
   static displayName = 'SearchBar'
@@ -26,8 +26,23 @@ class SearchBar extends Component {
   render () {
     return (
       <form onSubmit={this.handleFormSubmit} className='SearchBar'>
-        <input type='text' value={this.state.query} onChange={this.handleInputChange} />
-        <button type='submit'>Search</button>
+        <div className='field has-addons'>
+          <div className='control has-icons-left is-expanded'>
+            <input
+              placeholder='Enter a topic to search'
+              className='input is-info'
+              type='text'
+              value={this.state.query}
+              onChange={this.handleInputChange}
+            />
+            <span class='icon is-left'>
+              <i class='fa fa-search' />
+            </span>
+          </div>
+          <div class='control'>
+            <button className='button is-info' type='submit'>Search</button>
+          </div>
+        </div>
       </form>
     )
   }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bulma": "^0.6.1",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
@@ -18,7 +19,7 @@
     "eject": "react-scripts eject",
     "lint": "standard --fix | snazzy",
     "cover": "react-scripts test --env=jsdom --coverage",
-    "deploy" : "npm run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",

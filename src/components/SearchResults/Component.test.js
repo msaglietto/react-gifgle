@@ -89,7 +89,7 @@ describe('SearchResults', () => {
   it('should call history on image click', () => {
     const props = {
       ...defProps,
-      match: { params: {query: 'test', page: '4'} },      
+      match: { params: {query: 'test', page: '4'} },
       history: { push: jest.fn() }
     }
     const wrapper = shallow(<Component {...props} />)
@@ -101,7 +101,7 @@ describe('SearchResults', () => {
   it('should call history on page change', () => {
     const props = {
       ...defProps,
-      match: { params: {query: 'test', page: '4'} },      
+      match: { params: {query: 'test', page: '4'} },
       history: { push: jest.fn() }
     }
     const wrapper = shallow(<Component {...props} />)

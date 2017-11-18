@@ -5,15 +5,37 @@ exports[`SearchBar should render equal to the snapshot 1`] = `
   className="SearchBar"
   onSubmit={[Function]}
 >
-  <input
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <button
-    type="submit"
+  <div
+    className="field has-addons"
   >
-    Search
-  </button>
+    <div
+      className="control has-icons-left is-expanded"
+    >
+      <input
+        className="input is-info"
+        onChange={[Function]}
+        placeholder="Enter a topic to search"
+        type="text"
+        value=""
+      />
+      <span
+        class="icon is-left"
+      >
+        <i
+          class="fa fa-search"
+        />
+      </span>
+    </div>
+    <div
+      class="control"
+    >
+      <button
+        className="button is-info"
+        type="submit"
+      >
+        Search
+      </button>
+    </div>
+  </div>
 </form>
 `;

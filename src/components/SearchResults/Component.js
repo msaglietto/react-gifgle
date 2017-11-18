@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import ImageList from '../ImageList'
 import Pagination from '../Pagination'
 
-import './style.css'
-
 class Component extends React.Component {
   static displayName = 'SearchResults'
 
@@ -53,17 +51,21 @@ class Component extends React.Component {
     }
 
     return (
-      <div className='SearchReults'>
-        <h2>You are seeing the results of {this.props.match.params.query || 'trending'} Gifts</h2>
+      <section className='SearchReults section'>
+        <div class='message is-info' style={{'marginTop': 10}}>
+          <h2 className='message-body'>You are seeing the results of {this.props.match.params.query || 'trending'} Gifts</h2>
+        </div>
+
         <ImageList images={this.props.images} onImageClick={this.handleImageClick} />
-        <div className='SearchResults-pagination'>
+
+        <div className='SearchResults-pagination' style={{'marginTop': 10}}>
           <Pagination
             currentPage={this.props.page}
             totalItems={this.props.total}
             onPageClick={this.handlePageChange}
           />
         </div>
-      </div>
+      </section>
     )
   }
 }

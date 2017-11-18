@@ -32,7 +32,7 @@ describe('Pagination', () => {
   it('should render pagestToShow elements', () => {
     const wrapper = shallow(<Component {...defProps} />)
 
-    expect(wrapper.find('li')).toHaveLength(5 + 4)
+    expect(wrapper.find('li')).toHaveLength(5)
   })
 
   it('should render just pages to fill the total items', () => {
@@ -42,7 +42,7 @@ describe('Pagination', () => {
     }
     const wrapper = shallow(<Component {...props} />)
 
-    expect(wrapper.find('li')).toHaveLength(2 + 4)
+    expect(wrapper.find('li')).toHaveLength(2)
   })
 
   it('should skip pages if there are more than pagesToShow and currentPage is big', () => {
@@ -52,7 +52,7 @@ describe('Pagination', () => {
     }
     const wrapper = shallow(<Component {...props} />)
 
-    expect(wrapper.find('li').at(2).text().trim()).toEqual('3')
+    expect(wrapper.find('li').at(0).text().trim()).toEqual('3')
   })
 
   it('should skip pages if there are more than pagesToShow and currentPage is big', () => {
@@ -62,7 +62,7 @@ describe('Pagination', () => {
     }
     const wrapper = shallow(<Component {...props} />)
 
-    expect(wrapper.find('li').at(6).text().trim()).toEqual('10')
+    expect(wrapper.find('li').at(4).text().trim()).toEqual('10')
   })
 
   it('should report page click on onPageClick', () => {
@@ -73,28 +73,20 @@ describe('Pagination', () => {
     }
     const wrapper = shallow(<Component {...props} />)
 
-    // Beginning
-    wrapper.find('li').at(0).find('button').simulate('click')
-    expect(props.onPageClick).toHaveBeenCalledWith(0)
-
     // Prev
-    wrapper.find('li').at(1).find('button').simulate('click')
+    wrapper.find('a').at(0).simulate('click')
     expect(props.onPageClick).toHaveBeenCalledWith(3)
 
     // First num
-    wrapper.find('li').at(2).find('button').simulate('click')
+    wrapper.find('li').at(0).find('a').simulate('click')
     expect(props.onPageClick).toHaveBeenCalledWith(2)
 
     // Last num
-    wrapper.find('li').at(6).find('button').simulate('click')
+    wrapper.find('li').at(4).find('a').simulate('click')
     expect(props.onPageClick).toHaveBeenCalledWith(6)
 
     // Next
-    wrapper.find('li').at(7).find('button').simulate('click')
+    wrapper.find('a').at(1).simulate('click')
     expect(props.onPageClick).toHaveBeenCalledWith(5)
-
-    // Last
-    wrapper.find('li').at(8).find('button').simulate('click')
-    expect(props.onPageClick).toHaveBeenCalledWith(9)
   })
 })

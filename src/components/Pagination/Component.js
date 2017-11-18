@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './style.css'
-
 const propTypes = {
   currentPage: PropTypes.number,
   perPage: PropTypes.number,
@@ -19,9 +17,9 @@ const defaultProps = {
 
 const handePageClick = (props, page) => () => props.onPageClick(page)
 
-const button = (props, page, label) => (
+const button = (props, page, label, currentPage) => (
   <li key={label}>
-    <button onClick={handePageClick(props, page)}> {label} </button>
+    <a className={`pagination-link ${page === currentPage ? 'is-current' : ''}`} onClick={handePageClick(props, page)}> {label} </a>
   </li>
 )
 
@@ -39,19 +37,16 @@ const Component = props => {
   )
 
   return (
-    <ul className='Pagination'>
-      {button(props, 0, '<<')}
-      {button(props, Math.max(props.currentPage - 1, 0), '<')}
-      {Array.apply(null, Array(range)).map((_, i) => {
-        const atPage = i + showFromPage
-        return (atPage === props.currentPage
-          ? <li key={atPage + 1}>{atPage + 1}</li>
-          : button(props, atPage, atPage + 1)
-        )
-      })}
-      {button(props, Math.min(props.currentPage + 1, maxPages - 1), '>')}
-      {button(props, maxPages - 1, '>>')}
-    </ul>
+    <nav class='Pagination pagination is-centered' role='navigation' aria-label='pagination'>
+      <a class='pagination-previous' onClick={handePageClick(props, Math.max(props.currentPage - 1, 0))}>Previous</a>
+      <a class='pagination-next' onClick={handePageClick(props, Math.min(props.currentPage + 1, maxPages - 1))}>Next page</a>
+      <ul className='pagination-list'>
+        {Array.apply(null, Array(range)).map((_, i) => {
+          const atPage = i + showFromPage
+          return button(props, atPage, atPage + 1, props.currentPage)
+        })}
+      </ul>
+    </nav>
   )
 }
 

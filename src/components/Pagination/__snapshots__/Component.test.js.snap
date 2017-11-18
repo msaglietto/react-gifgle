@@ -1,101 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination should render equal to the snapshot 1`] = `
-<ul
-  className="Pagination"
+<nav
+  aria-label="pagination"
+  class="Pagination pagination is-centered"
+  role="navigation"
 >
-  <li
-    key="<<"
+  <a
+    class="pagination-previous"
+    onClick={[Function]}
   >
-    <button
-      onClick={[Function]}
+    Previous
+  </a>
+  <a
+    class="pagination-next"
+    onClick={[Function]}
+  >
+    Next page
+  </a>
+  <ul
+    className="pagination-list"
+  >
+    <li
+      key="1"
     >
-       
-      &lt;&lt;
-       
-    </button>
-  </li>
-  <li
-    key="<"
-  >
-    <button
-      onClick={[Function]}
+      <a
+        className="pagination-link is-current"
+        onClick={[Function]}
+      >
+         
+        1
+         
+      </a>
+    </li>
+    <li
+      key="2"
     >
-       
-      &lt;
-       
-    </button>
-  </li>
-  <li
-    key="1"
-  >
-    1
-  </li>
-  <li
-    key="2"
-  >
-    <button
-      onClick={[Function]}
+      <a
+        className="pagination-link "
+        onClick={[Function]}
+      >
+         
+        2
+         
+      </a>
+    </li>
+    <li
+      key="3"
     >
-       
-      2
-       
-    </button>
-  </li>
-  <li
-    key="3"
-  >
-    <button
-      onClick={[Function]}
+      <a
+        className="pagination-link "
+        onClick={[Function]}
+      >
+         
+        3
+         
+      </a>
+    </li>
+    <li
+      key="4"
     >
-       
-      3
-       
-    </button>
-  </li>
-  <li
-    key="4"
-  >
-    <button
-      onClick={[Function]}
+      <a
+        className="pagination-link "
+        onClick={[Function]}
+      >
+         
+        4
+         
+      </a>
+    </li>
+    <li
+      key="5"
     >
-       
-      4
-       
-    </button>
-  </li>
-  <li
-    key="5"
-  >
-    <button
-      onClick={[Function]}
-    >
-       
-      5
-       
-    </button>
-  </li>
-  <li
-    key=">"
-  >
-    <button
-      onClick={[Function]}
-    >
-       
-      &gt;
-       
-    </button>
-  </li>
-  <li
-    key=">>"
-  >
-    <button
-      onClick={[Function]}
-    >
-       
-      &gt;&gt;
-       
-    </button>
-  </li>
-</ul>
+      <a
+        className="pagination-link "
+        onClick={[Function]}
+      >
+         
+        5
+         
+      </a>
+    </li>
+  </ul>
+</nav>
 `;

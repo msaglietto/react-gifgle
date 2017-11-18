@@ -1,20 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchResults should render equal to the snapshot 1`] = `
-<div
-  className="SearchReults"
+<section
+  className="SearchReults section"
 >
-  <h2>
-    You are seeing the results of 
-    trending
-     Gifts
-  </h2>
+  <div
+    class="message is-info"
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
+  >
+    <h2
+      className="message-body"
+    >
+      You are seeing the results of 
+      trending
+       Gifts
+    </h2>
+  </div>
   <ImageList
     images={Array []}
     onImageClick={[Function]}
   />
   <div
     className="SearchResults-pagination"
+    style={
+      Object {
+        "marginTop": 10,
+      }
+    }
   >
     <Pagination
       currentPage={0}
@@ -24,7 +40,7 @@ exports[`SearchResults should render equal to the snapshot 1`] = `
       totalItems={10}
     />
   </div>
-</div>
+</section>
 `;
 
 exports[`SearchResults should show when its loading 1`] = `"Loading ..."`;

@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render a message for empty results 1`] = `
-<header
-  className="Header"
+<nav
+  className="Header navbar is-fixed-top is-black"
 >
-  <Link
-    replace={false}
-    to="/"
-  >
-    <img
-      alt="GIFGLE Logo"
-      className="Header-logo"
-      src="logo.svg"
-    />
-  </Link>
-  <Link
-    replace={false}
-    to="/"
-  >
-    <h1
-      className="Header-title"
-    >
-      GIFGLE
-    </h1>
-  </Link>
   <div
-    className="Header-SearchBar"
+    className="navbar-brand"
+  >
+    <Link
+      className="navbar-item"
+      replace={false}
+      to="/"
+    >
+      <img
+        alt="GIFGLE Logo"
+        className="Header-logo"
+        src="logo.svg"
+      />
+      <h1
+        className="Header-title"
+      >
+        GIFGLE
+      </h1>
+    </Link>
+  </div>
+  <div
+    className="navbar-item is-expanded"
   >
     <SearchBar
       onNewSearch={[Function]}
     />
   </div>
-</header>
+</nav>
 `;

@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker'
 
 import App from './components/App'
 
+import 'bulma/css/bulma.css'
 import './index.css'
 
 const store = configureStore()
